@@ -11,14 +11,40 @@
   height:100px;
   background-color: #253141;
   padding:0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bottom-side-bar{
   height:calc(100vh - 100px);
   background-color: #2F3E51;
   padding:0 20px;
+  overflow: scroll;
 }
 
+.user-name a{
+  color:#FAFAFA;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.chat-button a{
+  color:deepskyblue;
+  font-size: 10px;
+  padding:14px;
+  border: 1px solid lightblue;
+  text-decoration: none;
+}
+
+.room-name{
+  padding:20px 20px 40px 20px;
+}
+
+.room-name a{
+  color:white;
+  text-decoration: none;
+}
 
 .chat{
   width:calc(100% - 300px);
@@ -28,6 +54,22 @@
   background-color: #ffffff;
   height:100px;
   padding:0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-summary a{
+  text-decoration: none;
+  font-size: 24px;
+  color:#333;
+}
+
+.room-exit a{
+  text-decoration: none;
+  color:darkred;
+  padding:20px;
+  border:1px solid darkred;
 }
 
 
@@ -35,10 +77,73 @@
   background-color: #FAFAFA;
   height:calc(100vh - 190px);
   padding: 46px 40px 0 40px;
+  overflow: scroll;
+  box-sizing: border-box;
 }
+
+.message-area{
+  padding:10px 0px;
+  margin-bottom: 40px;
+}
+
+.chat-name{
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 16px;
+  color:#434A54;
+}
+
+.chat-time{
+  font-size: 12px;
+  color:#999;
+}
+
+.chat-message{
+  font-size: 16px;
+  color:#434A54;
+}
+
 
 .bottom-chat{
   height:90px;
   background-color: #DDDDDD;
   padding:20px 40px;
+  display: flex;
+}
+
+.post-area{
+  display: flex;
+  width:100%;
+  background-color: white;
+}
+
+.post-content{
+  border:none;
+  padding-left:10px;
+  width:100%;
+  height:50px;
+}
+
+.post-button{
+  padding:0 20px;
+  margin-left: 15px;
+  font-size:16px;
+  color:white;
+  height:50px;
+  background-color: #38AEF0;
+  border:none;
+}
+
+.post-image{
+  font-size: 12px;
+  background-color: lightblue;
+  color:white;
+  padding:12px;
+  width:60px;
+  margin:5px 10px;
+  text-align: center;
+}
+
+.hidden{
+  display: none;
 }
