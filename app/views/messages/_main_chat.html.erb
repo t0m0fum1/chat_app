@@ -7,7 +7,9 @@
   </div>
 </div>
 <div class = "middle-chat">
-  <div class = "message-area">
+  <%= render partial: 'message', collection: @messages %>
+
+  <%# <div class = "message-area">
     <span class = "chat-name">TOM</span>
     <span class = "chat-time">2020/03/31(Wed) 12:43:30<span>
     <p class = "chat-message">おはよう</p>
@@ -16,7 +18,7 @@
     <span class = "chat-name">TOM</span>
     <span class = "chat-time">2020/03/31(Wed) 12:43:30<span>
     <p class = "chat-message">こんにちは</p>
-  </div>
+  </div> %>
 </div>
 <%= form_with model: [@room, @message], html: {class: "bottom-chat"}, local: true do |f| %>
   <div class = "post-area">
