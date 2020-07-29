@@ -86,8 +86,11 @@
   margin-bottom: 40px;
 }
 
+.upper-message{
+  display: flex; 
+}
+
 .chat-name{
-  display: inline-block;
   padding-right: 10px;
   font-size: 16px;
   color:#434A54;

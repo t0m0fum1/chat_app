@@ -1,13 +1,15 @@
 <div class = "top-chat">
   <div class = "room-summary">
-    <a href = "#">hogefuga</a>
+    <%= @room.name %>
   </div>
   <div class = "room-exit">
-    <a href = "#">チャットを終了する</a>
+    <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
   </div>
 </div>
 <div class = "middle-chat">
-  <div class = "message-area">
+  <%= render partial: 'message', collection: @messages %>
+
+  <%# <div class = "message-area">
     <span class = "chat-name">TOM</span>
     <span class = "chat-time">2020/03/31(Wed) 12:43:30<span>
     <p class = "chat-message">おはよう</p>
@@ -16,9 +18,20 @@
     <span class = "chat-name">TOM</span>
     <span class = "chat-time">2020/03/31(Wed) 12:43:30<span>
     <p class = "chat-message">こんにちは</p>
-  </div>
+  </div> %>
 </div>
-<div class = "bottom-chat">
+<%= form_with model: [@room, @message], html: {class: "bottom-chat"}, local: true do |f| %>
+  <div class = "post-area">
+    <%= f.text_field :content, class: "post-content", placeholder: "type a message" %>
+    <label class = "post-image">
+      <span class = "image-file">画像</span>
+      <%= f.file_field :image, class: "hidden" %>
+    </label>
+  </div>
+  <%= f.submit "送信", class: "post-button" %>
+<% end %>
+
+<%# <div class = "bottom-chat">
   <form class = "post-area">
     <input placeholder = "type a message" class = "post-content">
     <label class = "post-image">
@@ -27,4 +40,4 @@
     </label>
   </form>
     <input type = "submit" value = "送信" class = "post-button">
-</div>
+</div> %>
